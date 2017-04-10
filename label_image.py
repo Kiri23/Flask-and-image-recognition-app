@@ -1,6 +1,4 @@
-from flask import Flask
 import tensorflow as tf, sys
-app = Flask(__name__)
 
 def valo():
     # image_path = sys.argv[1]
@@ -34,17 +32,5 @@ def valo():
             score = predictions[0][node_id]
             return('%s (score = %.5f)' % (human_string, score))
 
-@app.route('/')
-def hello_world():
-   valor = valo()
-   return valor
-
-
-
-
-if __name__ == '__main__':
-   app.run()
-
-# hahah
-# alak
-# sssfs
+valor = valo()
+print(valor)
